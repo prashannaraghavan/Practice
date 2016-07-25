@@ -15,7 +15,6 @@ void permutation(char* a,int s,int e)
 
 	if (s==e)
 	{
-		/* code */
 		printf("%s\n", a);
 	}
 
@@ -23,7 +22,6 @@ void permutation(char* a,int s,int e)
 	{
 		for (i = s; i <= e; i++)
 		{
-			/* code */
 			swap(a+s,a+i);
 			permutation(a,s+1,e);
 			swap(a+s,a+i);
