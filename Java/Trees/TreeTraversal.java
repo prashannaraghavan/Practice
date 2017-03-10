@@ -69,6 +69,22 @@ class TreeTraversal
 		}
 	}
 
+	private static int diameter(Node root)
+	{
+		if (root==null) 
+			return 0;
+		else
+		{
+			int lh = height(root.left);
+			int rh = height(root.right);
+
+			int ld = diameter(root.left);
+			int rd = diameter(root.right);
+
+			return Math.max(lh+rh+1,Math.max(ld,rd));
+		}
+	}
+
 	private static void printCurrentLevel(Node root,int level)
 	{
 		if (root == null) return;
@@ -110,5 +126,9 @@ class TreeTraversal
 
 		System.out.println("Level Order");
 		printLevelOrder(tree.root);
+
+		System.out.println("Height "+height(tree.root));
+
+		System.out.println("Diameter "+diameter(tree.root));
 	}
 }
