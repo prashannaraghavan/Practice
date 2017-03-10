@@ -56,6 +56,41 @@ class TreeTraversal
 		}
 	}
 
+	private static int height(Node root)
+	{
+		if (root==null) 
+			return 0;
+		else
+		{
+			int lh = height(root.left);
+			int rh = height(root.right);
+
+			return (lh > rh) ? lh+1 : rh+1;
+		}
+	}
+
+	private static void printCurrentLevel(Node root,int level)
+	{
+		if (root == null) return;
+		else if(level == 1) System.out.println(root.data+" ");
+		else if(level > 1)
+		{
+			printCurrentLevel(root.left,level-1);
+			printCurrentLevel(root.right,level-1);
+		}
+	}
+
+	private static void printLevelOrder(Node root)
+	{
+		if(root == null)
+			return;
+		int height = height(root);
+
+		for (int level=1;level<=height ;level++ ) {
+			printCurrentLevel(root,level);
+		}
+	}
+
 	public static void main(String[] args) {
 		TreeTraversal tree = new TreeTraversal();
 		tree.root = new Node(1);
@@ -72,5 +107,8 @@ class TreeTraversal
 
 		System.out.println("Post Order");
 		printPostOrder(tree.root);
+
+		System.out.println("Level Order");
+		printLevelOrder(tree.root);
 	}
 }
