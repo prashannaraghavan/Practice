@@ -55,8 +55,8 @@ public class Graph
 		return s;
 	}
 
-	public static void main(String[] args) {
-		 Graph graph = new Graph(new In(args[0]));
-		 System.out.println(graph.toString()); 
-	}
+	// public static void main(String[] args) {
+	// 	 Graph graph = new Graph(new In(args[0]));
+	// 	 System.out.println(graph.toString()); 
+	// }
 }
