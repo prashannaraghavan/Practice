@@ -1,6 +1,6 @@
 import java.util.Iterator;
 
-class Bag<Item> implements Iterable<Item>
+public class Bag<Item> implements Iterable<Item>
 {
 	private Node first;
 
@@ -45,19 +45,19 @@ class Bag<Item> implements Iterable<Item>
 		}
 	}
 
-	public static void main(String[] args) {
-		Bag bag = new Bag();
-		bag.addItem(5);
-		bag.addItem(4);
-		bag.addItem(2);
-		bag.addItem(3);
-		bag.addItem(1);
+	// public static void main(String[] args) {
+	// 	Bag bag = new Bag();
+	// 	bag.addItem(5);
+	// 	bag.addItem(4);
+	// 	bag.addItem(2);
+	// 	bag.addItem(3);
+	// 	bag.addItem(1);
 
-		Iterator iterator = bag.iterator();
+	// 	Iterator iterator = bag.iterator();
 
-		while(iterator.hasNext())
-		{
-			System.out.println(iterator.next()+" ");
-		}
-	}
+	// 	while(iterator.hasNext())
+	// 	{
+	// 		System.out.println(iterator.next()+" ");
+	// 	}
+	// }
 }
